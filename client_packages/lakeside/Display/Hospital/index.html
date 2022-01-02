@@ -1,0 +1,49 @@
+<!--
+ Project Lakeside V
+ made by DorteY
+ lake-gaming.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Krankenhaus</title>
+		
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/bootstrap.min.css">
+        <script src="../../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Krankenhaus</p>
+				</div>
+                <div class="card-body">
+					<h5 class="text-center">Hier kannst du dich von einem Artzt behandeln lassen</h5>
+					<h5 class="text-center">Kosten: $100</h5>
+					
+					<button class="btn-close" onclick="ExitHospitalUI()">X</button>
+                    <br>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="payin" role="tabpanel">
+                            <button onclick="Heal()" type="button" class="btn btn-orange btn-lg btn-block" id="loginBtn">Artzt aufsuchen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+	
+	<script>
+		function Heal(){
+			mp.trigger("Call->Custom->Event","Hospital->Heal");
+			mp.trigger("Close->Hospital->UI");
+		};
+		function ExitHospitalUI(){
+			mp.trigger("Close->Hospital->UI");
+		};
+	</script>
+</html>

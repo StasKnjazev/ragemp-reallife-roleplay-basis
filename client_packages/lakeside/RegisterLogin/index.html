@@ -1,0 +1,105 @@
+<!--
+ Project Lakeside V
+ made by DorteY
+ lake-gaming.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Login/Register</title>
+		
+		<script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../lakeside_ui/css/bootstrap.min.css">
+        <script src="../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Login/Register</p>
+				</div>
+                <div class="card-body" id="app">
+                    <h2 class="text-center">Willkommen auf Lakeside V</h2>
+                    <p class="text-center">Wenn du bereits einen Account hast, kannst du dich einloggen, anderfalls Registriere dich.</p>
+					
+					<!--<button class="btn-close" @click="close()">X</button>-->
+                    <br>
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <!--</li><a class="nav-link active" id="login-tab" data-toggle="tab" href="#payin" role="tab">Einzahlen</a>-->
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab">Einloggen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab">Registrierung</a>
+                        </li>
+                    </ul>
+					<br>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="triggerNameLogin" id="triggerNameLogin" placeholder="Benutzername">
+                            </div>
+							<div class="input-group mb-3">
+                                <input type="password" class="form-control" name="triggerPasswordLogin" id="triggerPasswordLogin" placeholder="Passwort">
+                            </div>
+                            <button onclick="sendAccountInfosLogin(1)" type="button" class="btn btn-orange btn-lg btn-block" id="loginBtn">Einloggen</button>
+							<br><div class="dropdown-divider"></div>
+							<p>Version: {{ServerVersion}} Alpha</p>
+							<br><div class="dropdown-divider"></div>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                             <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="triggerNameRegister" id="triggerNameRegister" placeholder="Benutzername (3-20 Zeichen)" maxlength="20">
+                            </div>
+							<div class="input-group mb-3">
+                                <input type="password" class="form-control" name="triggerPasswordRegister" id="triggerPasswordRegister" placeholder="Passwort (3-25 Zeichen)">
+                            </div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" name="acceptAge" id="acceptAge">
+								<label class="form-check-label" for="exampleCheck1">Ich bin 16 Jahre oder &auml;lter.</label>
+							</div><br>
+                            <button onclick="sendAccountInfosRegister(0)" type="button" class="btn btn-orange btn-lg btn-block" id="registerBtn">Registrieren</button>
+							<br><div class="dropdown-divider"></div>
+							<p>Version: {{ServerVersion}} Alpha</p>
+							<br><div class="dropdown-divider"></div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+	
+	<script>
+		const app = new Vue({
+		el: '#app',
+			data: {
+				ServerVersion: "0.0",
+			}
+		});
+		
+		
+		function sendAccountInfosLogin(type){
+			let triggerNameLogin=document.getElementById("triggerNameLogin").value;
+			let triggerPasswordLogin=document.getElementById("triggerPasswordLogin").value;
+			mp.trigger("registerLogin.client",triggerNameLogin,triggerPasswordLogin,type,true);
+		};
+		function sendAccountInfosRegister(type){
+			let triggerNameRegister=document.getElementById("triggerNameRegister").value;
+			let triggerPasswordRegister=document.getElementById("triggerPasswordRegister").value;
+			let acceptAge=document.getElementById("acceptAge");
+			let age16=false;
+			
+			if(acceptAge.checked==true){
+				age16=true;
+			}else{
+				age16=false;
+			}
+			
+			mp.trigger("registerLogin.client",triggerNameRegister,triggerPasswordRegister,type,age16);
+		};
+	</script>
+</html>

@@ -1,0 +1,14 @@
+{
+	"Blips": {
+		"Traubenfeld": {
+			"Position": {
+				"X": -1838.2,
+				"Y": 2072,
+				"Z": 137.6
+			},
+			"Name": "Job: Traubenpflücker",
+			"IconID": 514,
+			"Color": 27
+		}
+	}
+}

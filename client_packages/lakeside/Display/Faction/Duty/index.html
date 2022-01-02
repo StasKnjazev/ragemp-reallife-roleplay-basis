@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside</title>
+		
+		<script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="app">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Fraktion - Dienst</p>
+				</div>
+                <div class="card-body" id="app">
+                    <!--<h1 class="text-center">Dienst</h1>-->
+					
+					<button class="btn-close" onclick="ExitDutyUI()">X</button>
+					<br>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="payin" role="tabpanel">
+                            <button type="button" class="btn btn-success btn-lg btn-block" id="loginBtn">Dienst betreten</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+	
+	<script>
+		const app = new Vue({
+		el: '#app',
+			data: {
+				
+			},
+			methods: {
+				
+			}
+		});
+		
+		//function tankFull(){
+		//	mp.trigger("Call->Custom->Event","Tank->Vehicle");
+		//	mp.trigger("Close->Faction->Duty->UI");
+		//};
+		function ExitDutyUI(){
+			mp.trigger("Close->Faction->Duty->UI");
+		};
+	</script>
+</html>

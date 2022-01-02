@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Eigenmenü</title>
+		
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/bootstrap.min.css">
+        <script src="../../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Eigenmen&uuml;</p>
+				</div>
+                <div class="card-body">
+					
+					<button class="btn-close" onclick="ExitSettingUI()">X</button>
+                    <br>
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <!--<li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#vehicles" role="tab">Fahrzeuge</a>
+                        </li>-->
+						<li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#spawnpoint" role="tab">Spawnpunkt</a>
+                        </li>
+                    </ul>
+					<br>
+                    <div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade" id="vehicles" role="tabpanel">
+							
+							
+							
+                        </div>
+                        <div class="tab-pane fade show active" id="spawnpoint" role="tabpanel">
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="setSpawn(0)">Noobspawn</button>
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="setSpawn(1)">Mega Mall</button>
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="setSpawn(2)">Jetzige Position</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+<script>
+	function setSpawn(id){
+		mp.trigger("Call->Custom->Event","Set->Spawn",Number(id));
+	}
+	function ExitSettingUI(){
+		mp.trigger("Close->F2Menu->UI");
+	}
+</script>

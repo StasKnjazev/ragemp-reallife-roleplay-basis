@@ -1,0 +1,212 @@
+body {
+    background: none !important;
+}
+
+#container {
+    font-size: 10px;
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#hexGrid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px;
+    list-style-type: none;
+}
+
+.hex {
+    position: relative;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    background-color: white;
+    width: 100%;
+    /* fix for jagged edges in FF on hover transition */
+}
+
+.hex::after {
+    content: '';
+    display: block;
+    padding-bottom: 86.602%;
+    /* =  100 / tan(60) * 1.5 */
+}
+
+.hexIn {
+    position: absolute;
+    width: 96%;
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+    padding-bottom: 110.851%;
+    /* =  width / sin(60) */
+    margin: 0 2%;
+    overflow: hidden;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+    -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+}
+
+.hexInInvisible {
+    position: absolute;
+    width: 96%;
+    padding-bottom: 110.851%;
+    /* =  width / sin(60) */
+    margin: 0 2%;
+    overflow: hidden;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+    -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+}
+
+.hexIn * {
+    position: absolute;
+    visibility: visible;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+}
+
+.hexLink {
+    /*background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #28282886;
+    background-size: 16px 16px;*/
+    background-color: #000000c9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 24 24'%3E%3Cg fill='%23515151' fill-opacity='0.53'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+
+/*** HEX CONTENT **********************************************************************/
+
+.hex img {
+    left: 0%;
+    right: 0%;
+    top: 30%;
+    bottom: 30%;
+    width: auto;
+    height: 40%;
+    margin: 0 auto;
+    color: red;
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    -ms-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+}
+
+.hex h1,
+.hex p {
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+    background-color: rgba(137, 97, 248, 0.692);
+    font-weight: 300;
+    -webkit-transition: -webkit-transform .2s ease-out, opacity .3s ease-out;
+    transition: transform .2s ease-out, opacity .3s ease-out;
+}
+
+.hex h1 {
+    bottom: 50%;
+    padding-top: 50%;
+    font-size: 1.5em;
+    z-index: 1;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+.hex h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 10%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.hex p {
+    top: 50%;
+    padding-bottom: 50%;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+
+/*** HOVER EFFECT  **********************************************************************/
+
+
+/*.hexLink:hover h1,
+.hexLink:focus h1,
+.hexLink:hover p,
+.hexLink:focus p {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    outline: darkmagenta;
+}*/
+
+.hexLink:hover {
+    background: rgb(47, 107, 217);
+    background: linear-gradient(90deg, rgba(100,100,100, 1) 1%, rgba(220, 90, 0, 1) 92%);
+}
+
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+
+#hexGrid {
+    padding-bottom: 4.4%
+}
+
+.hex {
+    width: 14.28%;
+    /* = 100 / 5 */
+}
+
+.hex:nth-child(9n+7) {
+    /* first hexagon of even rows */
+    margin-left: 7.14%;
+    /* = width of .hex / 2  to indent even rows */
+}
+
+.hex:nth-child(12) {
+    margin-right: 7.14%;
+}
+
+.hex:nth-child(16) {
+    margin-left: 0%;
+}
+
+.hex:nth-child(19) {
+    margin-left: 7.14%;
+}
+
+.hex:nth-child(25) {
+    margin-left: 0%;
+}

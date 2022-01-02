@@ -1,0 +1,299 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="reset.css" type="text/css">
+		<link rel="stylesheet" href="index.css" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="container">
+			<form id="form">
+				<ul id="hexGrid" class="animated fadeIn">
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>1</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>2</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>3</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>4</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>5</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>6</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>7</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>8</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#" onclick="repairVehicle()">
+								<img src="Img/Repair.png" alt="" />
+								<h1>9</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" /><!--TRUNK  onclick="interactVehicleTrunk()"-->
+								<h1>10</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>11</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>12</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>13</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>14</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#" onclick="refuelVehicle()">
+								<img src="Img/Fuelcan.png" alt="" />
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#" onclick="ExitVehicleInteractionUI()">
+								<img src="Img/X.png" alt="" />
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#" onclick="lockUnlockVehicle()">
+								<img src="Img/Lock.png" alt="" />
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>18</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>19</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>20</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#" onclick="">
+								<img src="Img/NONE.png" alt="" />
+								<h1>21</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexIn">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>22</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>23</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>24</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>25</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>26</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>27</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="Img/NONE.png" alt="" />
+								<h1>28</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="" value="">
+								<img src="Img/NONE.png" alt="" />
+								<h1>29</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+					<li class="hex">
+						<div class="hexInInvisible">
+							<a class="hexLink" href="#">
+								<img src="" alt="" />
+								<h1>30</h1>
+								<p>Some sample text about the article this hexagon leads to</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<script src="./index.js" type="text/javascript"></script>
+	</body>
+</html>
+
+<script>
+	function lockUnlockVehicle(){
+		mp.trigger("Close->Vehicle->Interaction->UI");
+		mp.trigger('Unlock->Lock->Vehicle->Doors');
+	};
+	function refuelVehicle(){
+		mp.trigger("Close->Vehicle->Interaction->UI");
+		mp.trigger('Refuel->Vehicle->C');
+	};
+	function repairVehicle(){
+		mp.trigger("Close->Vehicle->Interaction->UI");
+		mp.trigger('Repair->Vehicle->C');
+	};
+	function ExitVehicleInteractionUI(){
+		mp.trigger("Close->Vehicle->Interaction->UI");
+	};
+</script>

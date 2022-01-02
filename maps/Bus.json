@@ -1,0 +1,35 @@
+{
+	 "Map": {
+		 "Objects": {
+			 "MapObject": [
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":428.6219,"Y":-663.4388,"Z":28.0473},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":428.6241,"Y":-661.7975,"Z":27.9973},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":428.6219,"Y":-660.0233,"Z":27.7973},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":428.6005,"Y":-658.3182,"Z":27.6723},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":429.0184,"Y":-656.6506,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":429.8478,"Y":-655.2102,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":430.7677,"Y":-653.6944,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":431.5778,"Y":-652.244,"Z":27.7223},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2177,"Y":-650.6019,"Z":27.7223},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2439,"Y":-648.8832,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2674,"Y":-647.3409,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2472,"Y":-645.7759,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2413,"Y":-644.2762,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2585,"Y":-642.7093,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2555,"Y":-641.2728,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.235,"Y":-639.8232,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":432.2223,"Y":-638.3921,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":433.4482,"Y":-638.3881,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":434.6929,"Y":-638.3841,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":435.9188,"Y":-638.3801,"Z":27.6973},"Rotation":{"X":0,"Y":0,"Z":0.6}},
+				{"Type": "Prop","Hash":"4215619686","Dynamic": "false","Position":{"X":429.9284,"Y":-665.0627,"Z":28.1723},"Rotation":{"X":0,"Y":0,"Z":0}}
+			 ]
+		}
+	},
+	"Metadata": {
+		"name": "Bus",
+		"author": "DorteY",
+		"gamemode": "lakeside",
+		"description": "Bus Depot & Bus Routes"
+	 }
+}

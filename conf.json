@@ -1,0 +1,12 @@
+{
+	"maxplayers" : 333,
+	"name" : "Lakeside V | Roleplay Server | No Whitelist", 
+	"gamemode" : "freeroam", 
+	"stream-distance" : 700.0,
+	"announce" : true,
+	"csharp" : "disabled",
+	"language": "de",
+	"sync-rate": 50,
+	"voice-chat": false,
+	"port": 22005
+}

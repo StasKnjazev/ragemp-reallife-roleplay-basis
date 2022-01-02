@@ -1,0 +1,1 @@
+require ('./lakeside/Vehicle/SelectSeat/CEF/index.js');

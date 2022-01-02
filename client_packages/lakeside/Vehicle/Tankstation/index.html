@@ -1,0 +1,62 @@
+<!--
+ Project Lakeside V
+ made by DorteY
+ lake-gaming.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Tankstelle</title>
+		
+		<script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/bootstrap.min.css">
+        <script src="../../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+		<div class="container" id="app">
+			<div class="card topnav">
+				<div class="topnav">
+					<p>Tankstelle</p>
+				</div>
+				<div class="card-body" id="app">
+					<button class="btn-close" onclick="ExitTankUI()">X</button>
+					<br>
+					<p>INFO: Du bezahlst einmal ${{literPrice}} & bekommst den ganzen Tank voll!</p>
+					<br>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="tank" role="tabpanel">
+							<button type="button" class="btn btn-orange btn-lg btn-block" onclick="buyFuelcan()">Benzinkanister kaufen</button>
+							<button type="button" class="btn btn-orange btn-lg btn-block" onclick="tankFull()">Volltanken f&uuml;r ${{literPrice}}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script src="js/main.js"></script>
+    </body>
+	
+	<script>
+		const app = new Vue({
+		el: '#app',
+			data: {
+				literPrice: 0,
+			}
+		});
+		
+		
+		function buyFuelcan(){
+			mp.trigger("Call->Custom->Event","Buy->Item","Benzinkanister");
+			mp.trigger("Close->Tankstation->UI");
+		};
+		function tankFull(){
+			mp.trigger("Call->Custom->Event","Tank->Vehicle");
+			mp.trigger("Close->Tankstation->UI");
+		};
+		function ExitTankUI(){
+			mp.trigger("Close->Tankstation->UI");
+		};
+	</script>
+</html>

@@ -1,0 +1,65 @@
+﻿<html>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="vue.js"></script>
+	<body>
+		<div id="app">
+			<div class="b3-close" id="close-button" @click="ExitDeluxeUI">X</div>
+			<div class="title" id="id">{{ title }}</div>
+			<div class="content">
+			   <div v-for="car in cars" :style="{ 'background': 'url(img/' + car.model + '.jpg) center', 'background-size': 'cover' }" class="item">
+				  <div class="item-bg-color" @mouseover="car.hideText = false" @mouseout="car.hideText = true">
+					 <table class="item-table" :class="{ hideText: car.hideText }" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+						   <td>{{ modelText }}</td>
+						   <td class="right">{{ car.title }}</td>
+						</tr>
+						<tr class="buy" @click="buyCar(car.model)">
+						   <td>{{ priceText }}</td>
+						   <td class="right price">{{ car.price + car.price * margin / 400 }}</td>
+						</tr>
+					 </table>
+				  </div>
+			   </div>
+			</div>
+		 </div>
+	</body>
+</html>
+
+<script>
+	//function buyCar(model) {
+	//	const obj = { model: model, id: this.id, };
+	//	mp.trigger("Call->Custom->Event","Buy->Car",JSON.stringify(obj));
+	//	mp.trigger("CloseCarhouseUI");
+	//};
+	const app = new Vue({
+		el: '#app',
+		data: {
+			id: 0,
+			title: "Autohaus: Deluxe",
+			margin: 0,
+			modelText: "Modell",
+			priceText: "Kaufen",
+			hideText: true,
+			cars: [
+				{hideText:true,model:"jugular",title:"Jugular",price:185000,},
+				{hideText:true,model:"schafter3",title:"Schafter V12",price:220000,},
+				{hideText:true,model:"drafter",title:"Drafter",price:350000,},
+				{hideText:true,model:"coquette",title:"Qoquette",price:520000,},
+				{hideText:true,model:"paragon",title:"Paragon",price:620000,},
+				{hideText:true,model:"schlagen",title:"Schlagen GT",price:1250000,},
+				{hideText:true,model:"pariah",title:"Pariah",price:1500000,},
+			],
+		},
+		methods: {
+			ExitDeluxeUI:function(){
+				mp.trigger("Close->Carhouse->UI");
+			},
+			buyCar:function(model){
+				const obj={model:model,};
+				mp.trigger("Call->Custom->Event","Buy->Vehicle","Deluxe",JSON.stringify(obj));
+				mp.trigger("Close->Carhouse->UI");
+			},
+		}
+	});
+</script>

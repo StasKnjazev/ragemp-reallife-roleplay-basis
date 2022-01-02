@@ -1,0 +1,50 @@
+<!--
+ Project Lakeside V
+ made by DorteY
+ lake-gaming.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Busfahrer Job</title>
+		
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Lakeside - Busfahrer Job</p>
+				</div>
+                <div class="card-body">
+                    <h3 class="text-center">Willkommen beim Busfahrer Job, w&auml;hle eine Route:</h3>
+					
+					<!--<button class="btn-close" @click="close()">X</button>-->
+					<button class="btn-close" onclick="ExitJobUI()">X</button>
+                    <br>
+					<br>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" role="tabpanel">
+                            <button onclick="startJobStadt()" type="button" class="btn btn-success btn-lg btn-block" id="startJob">Stadtlinie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+<script>
+	function ExitJobUI(){
+		mp.trigger("Close->Job->UI");
+	};
+	function startJobStadt(){
+		mp.trigger("Call->Custom->Event","Start->Job->Bus","Stadt",1);
+		mp.trigger("Close->Job->UI");
+	};
+</script>

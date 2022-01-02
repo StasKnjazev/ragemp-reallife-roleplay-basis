@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Fahrzeugverleih</title>
+		
+		<script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/bootstrap.min.css">
+        <script src="../../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="app">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Fahrzeugverleih {{rentalID}}</p>
+				</div>
+                <div class="card-body" id="app">
+                    <h5 class="text-center">Hier kannst du dir ein fahrzeug f&uuml;r 30 Minuten ausleihen.</h5>
+					<center><h4>Kosten $75</h4></center>
+					
+					<button class="btn-close" onclick="ExitRentalUI()">X</button>
+                    <br>
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#panto" role="tab">Panto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#emperor" role="tab">Emperor</a>
+                        </li>
+                    </ul>
+					<br>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="panto" role="tabpanel">
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="rentPanto(1)">Ausleihen</button>
+                        </div>
+						<div class="tab-pane fade" id="emperor" role="tabpanel">
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="rentEmperor(1)">Ausleihen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+<script>
+	const app = new Vue({
+	el: '#app',
+		data: {
+			rentalID: 0,
+		}
+	});
+	
+	
+	function rentPanto(id){
+		mp.trigger("Call->Custom->Event","Rent->Vehicle","panto",id);
+		mp.trigger("Close->Rental->UI");
+	};
+	function rentEmperor(id){
+		mp.trigger("Call->Custom->Event","Rent->Vehicle","emperor2",id);
+		mp.trigger("Close->Rental->UI");
+	};
+	function ExitRentalUI(){
+		mp.trigger("Close->Rental->UI");
+	}
+</script>

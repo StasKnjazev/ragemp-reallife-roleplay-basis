@@ -1,0 +1,58 @@
+<!--
+ Project Lakeside V
+ made by DorteY
+ lake-gaming.com
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lakeside - Schrottplatz</title>
+		
+		<script src="vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../lakeside_ui/css/bootstrap.min.css">
+        <script src="../../lakeside_ui/js/jquery-3.2.1.js"></script>
+        <script src="../../lakeside_ui/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="app">
+            <div class="card topnav">
+				<div class="topnav">
+					<p>Schrottplatz</p>
+				</div>
+                <div class="card-body" id="app">
+					<button class="btn-close" onclick="ExitScrapyardUI()">X</button>
+					
+                    <h5 class="text-center">Hier kannst du dein Fahrzeug f&uuml;r 60% des kaufpreises verschrotten lassen.</h5>
+                    <h4 class="text-center">Du erh&auml;lst ${{sellPrice}} zur&uuml;ck.</h4>
+					
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="scrap" role="tabpanel">
+                            <button type="button" class="btn btn-orange btn-lg btn-block" onclick="sellVehicle()">Fahrzeug verschrotten</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+<script>
+	const app = new Vue({
+	el: '#app',
+		data: {
+			sellPrice: "",
+		}
+	});
+	
+	
+	function sellVehicle(){
+		mp.trigger("Call->Custom->Event","Sell->Vehicle->Scrap");
+		mp.trigger("Close->Scrapyard->UI");
+	};
+	function ExitScrapyardUI(){
+		mp.trigger("Close->Scrapyard->UI");
+	};
+</script>

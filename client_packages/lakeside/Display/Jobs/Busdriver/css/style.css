@@ -1,0 +1,71 @@
+html body {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body .container {
+    margin-top:13%;
+    max-width: 600px;
+	max-height: 300px;
+}
+
+.card-body {
+	background-color: #616161;
+}
+
+.nav-link {
+	background-color: #434343;
+	color: #000;
+}
+.nav-link:hover {
+	background-color: #434343;
+	color: #fff;
+}
+
+.nav-link .active>login-tab {
+	background-color: #434343;
+	color: #000;
+}
+
+
+
+
+.btn-close {
+    color: #fff;
+    font-size: 15px;
+    background: transparent;
+    font-weight: bolder;
+    border: none;
+    display: inline;
+    position: absolute;
+    text-transform: uppercase;
+    top: 7px;
+    right: 7px;
+	background-color: #c60000;
+}
+.btn-close:hover {
+    color: #fff;
+    font-size: 15px;
+    background: transparent;
+    font-weight: bolder;
+    border: none;
+    display: inline;
+    position: absolute;
+    text-transform: uppercase;
+    top: 7px;
+    right: 7px;
+	background-color: #ff6161;
+}
+
+.topnav {
+  background-color: #434343;
+  overflow: hidden;
+}
+.topnav p {
+  float: center;
+  top: center;
+  color: #fff;
+  text-align: center;
+  margin: 4px 4px;
+  text-decoration: none;
+  font-size: 20px;
+}
